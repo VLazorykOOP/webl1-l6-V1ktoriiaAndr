@@ -1,0 +1,188 @@
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  direction: ltr;
+  unicode-bidi: normal;
+}
+
+h1, h2, h3 {
+  color: #3d3d5c;
+}
+
+#student-group {
+  background-color: #e6e6ff;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+div p {
+  line-height: 1.7em;
+}
+
+header > nav {
+  background-color: #333;
+  padding-right: 25px;
+  height: 50px;
+}
+
+nav a {
+  color: white;
+  margin-right: 15px;
+  line-height: 50px;
+  display: inline-block;
+}
+
+a[title] { /* [attr] - Всі посилання з атрибутом title */
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+}
+
+a[href="company.html"] { /* [attr=value] - Точна відповідність */
+  font-weight: bold;
+}
+
+img[alt^="Логотип"] { /* [attr^=value] - Починається з... */
+  border-style: groove; /* Стиль рамки */
+  border-width: thin; /* Тонка рамка */
+  border-color: #2a0a52; /* Колір рамки */
+}
+
+/* --- Псевдокласи --- */
+nav a:active { /* :active - При натисканні на посилання */
+  color: #ff4d4d !important; /* !important надає правилу найвищий пріоритет */
+}
+
+p:lang(uk) { /* :lang - Вибір елемента за мовою */
+  font-style: italic;
+}
+
+ul li:first-child { /* :first-child - Перший дочірній елемент */
+  font-weight: bold;
+}
+
+ul li:last-child {
+  text-decoration: underline;
+}
+
+.specs li:last-of-type {
+  background-color: #f0f8ff;
+}
+
+input:enabled {
+  background-color: #e8f5e9;
+}
+
+input:disabled {
+  background-color: #eeeeee;
+}
+
+p::first-line {
+  font-weight: bold;
+  color: #0056b3;
+}
+
+h2::before {
+  content: "🚀 ";
+}
+
+main {
+  width: 80%; /* Ширина блоку */
+  max-width: 1200px; /* Максимальна ширина */
+  margin: 2% auto; /* Відступи (зверху/знизу - 2%, зліва/справа - авто) */
+  padding-left: 2%;
+  border-left-width: 5px; /* Ширина лівої межі */
+  border-left-style: solid;
+  border-top-color: #ccc;
+  border-right-color: #aaa;
+  min-height: 400px; /* Мінімальна висота в пікселях */
+}
+
+#promo-banner {
+  float: left; /* Обтікання зліва */
+  margin-right: 20px; /* Зовнішній відступ справа */
+}
+
+footer {
+  clear: left; /* Скасування обтікання */
+  margin-top: 40px; /* Зовнішній відступ зверху */
+  border-top-width: thin;
+  border-bottom-width: 10px; /* Ширина нижньої межі */
+  border-bottom-style: groove;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.unit {
+  display: inline; /* Рядковий елемент */
+  vertical-align: sub; /* Вертикальне вирівнювання як нижній індекс */
+}
+
+article {
+  position: relative; /* Відносне позиціонування */
+  min-height: 25%; /* Мінімальна висота у відсотках */
+  border-right-style: dotted; /* Стиль правої рамки */
+  border-bottom-style: hidden; /* Прихована рамка */
+  overflow: auto; /* Додає прокрутку, якщо контент не вміщується */
+  outline: 2px solid #ff5733; /* Зовнішній контур */
+  outline-width: 2px; /* Ширина контуру */
+}
+
+
+.clipped-element {
+  position: static; /* Статичне позиціонування */
+  clip: rect(10px, 20px, 30px, 0px);
+  visibility: visible;
+}
+
+
+body {
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-attachment: scroll;
+  background-position: 50% 50%;
+}
+
+header {
+  background-color: #ffffff;
+  background-position: left;
+  border-bottom-style: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: static;
+  z-index: auto;
+}
+.info-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.menu-link {
+  display: block;
+  padding: 8px 12px;
+  margin: 4px 0;
+  background-color: #eef;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.menu-link:hover {
+  background-color: #d_d_eff;
+  color: #000;
+}
+
+.news-ticker {
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.service-desc {
+  margin-left: 25px;
+  font-style: italic;
+  color: #555;
+}
