@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товари фірми NovaTech</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    th {
+      background-color: #e0e0e0;
+      font-weight: bold;
+    }
+    /* Заміна атрибутів align/valign на CSS */
+    [align="left"]   { text-align: left; }
+    [align="right"]  { text-align: right; }
+    [align="center"] { text-align: center; }
+    [valign="top"]    { vertical-align: top; }
+    [valign="middle"] { vertical-align: middle; }
+    [valign="bottom"] { vertical-align: bottom; }
+    caption {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    .highlight {
+      background-color: #f0f8ff;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Фірма "NovaTech" — Комп'ютерна техніка</h1>
+
+<h2>Список товарів</h2>
+<table id="simpleTable" title="Проста таблиця товарів" lang="uk" dir="ltr">
+  <caption id="cap1" title="Заголовок простої таблиці">Каталог комп'ютерів</caption>
+  <thead>
+  <tr>
+    <th abbr="ID" colspan="1" id="th1" class="col1">ID</th>
+    <th abbr="Модель" colspan="1" id="th2" class="col2">Модель</th>
+    <th abbr="Тип" colspan="1" id="th3" class="col3">Тип</th>
+    <th abbr="Ціна" colspan="1" id="th4" class="col4">Ціна (грн)</th>
+    <th abbr="Статус" colspan="1" id="th5" class="col5">Статус</th>
+  </tr>
+  </thead>
+  <tbody title="Основні дані" align="center" char=".">
+  <tr id="srow1" align="center" charoff="0" valign="middle">
+    <td abbr="1" colspan="1" id="s1" class="col1">1</td>
+    <td abbr="NovaBook X1" colspan="1" id="s2" class="col2">NovaBook X1</td>
+    <td abbr="Ноутбук" colspan="1" id="s3" class="col3">Ноутбук</td>
+    <td abbr="24999" colspan="1" id="s4" class="col4">24 999</td>
+    <td abbr="Є" colspan="1" id="s5" class="col5">Є</td>
+  </tr>
+  <tr id="srow2" align="center" charoff="0" valign="middle">
+    <td abbr="2" colspan="1" id="s6" class="col1">2</td>
+    <td abbr="NovaStation Gaming" colspan="1" id="s7" class="col2">NovaStation Gaming</td>
+    <td abbr="ПК" colspan="1" id="s8" class="col3">ПК</td>
+    <td abbr="42999" colspan="1" id="s9" class="col4">42 999</td>
+    <td abbr="Під замовлення" colspan="1" id="s10" class="col5">Під замовлення</td>
+  </tr>
+  </tbody>
+</table>
+
+<h2>Детальна інформація про комп'ютери</h2>
+<table id="geoTable" title="Геометрична таблиця товарів" lang="uk" dir="ltr" align="center">
+  <caption id="geoCaption" title="Заголовок геометричної таблиці">Деталі комплектації</caption>
+
+  <tr id="row1" align="center" charoff="0" valign="middle">
+    <th abbr="ID" colspan="1" id="cell1_1" class="col1">ID</th>
+    <th abbr="Назва" colspan="4" id="cell1_2" class="col2">Модель комп'ютера</th>
+    <th abbr="Ціна" colspan="1" id="cell1_3" class="col3">Ціна (грн)</th>
+    <th abbr="Статус" colspan="1" id="cell1_4" class="col4">Статус</th>
+  </tr>
+
+  <tr id="row2" align="left" charoff="0" valign="top">
+    <td abbr="1" colspan="1" id="cell2_1" class="col1" rowspan="2">1</td>
+    <td abbr="Ноутбук" colspan="1" id="cell2_2" class="col2">NovaBook X1</td>
+    <td abbr="Процесор" colspan="1" id="cell2_3" class="col2">Intel i7-1360P</td>
+    <td abbr="ОЗУ" colspan="1" id="cell2_4" class="col2">16 ГБ</td>
+    <td abbr="ПЗУ" colspan="1" id="cell2_5" class="col2">1 ТБ SSD</td>
+    <td abbr="Ціна1" colspan="1" id="cell2_6" class="col3">24 999</td>
+    <td abbr="Статус1" colspan="1" id="cell2_7" class="col4" rowspan="2">Є в наявності</td>
+  </tr>
+
+  <tr id="row3" align="left" charoff="0" valign="middle">
+    <td abbr="Екран" colspan="1" id="cell3_2" class="col2">14" FHD IPS</td>
+    <td abbr="Відео" colspan="1" id="cell3_3" class="col2">Intel Iris Xe</td>
+    <td abbr="ОС" colspan="1" id="cell3_4" class="col2">Windows 11</td>
+    <td abbr="Гарантія" colspan="1" id="cell3_5" class="col2">24 міс</td>
+    <td abbr="—" colspan="1" id="cell3_6" class="col3">—</td>
+  </tr>
+
+  <tr id="row4" align="center" charoff="0" valign="middle">
+    <td abbr="2" colspan="1" id="cell4_1" class="col1">2</td>
+    <td abbr="ПК" colspan="1" id="cell4_2" class="col2">NovaStation Gaming</td>
+    <td abbr="Процесор" colspan="1" id="cell4_3" class="col2">Intel i5-14600K</td>
+    <td abbr="ОЗУ" colspan="1" id="cell4_4" class="col2">32 ГБ DDR5</td>
+    <td abbr="ПЗУ" colspan="1" id="cell4_5" class="col2">1 ТБ NVMe</td>
+    <td abbr="Ціна2" colspan="1" id="cell4_6" class="col3">42 999</td>
+    <td abbr="Статус2" colspan="1" id="cell4_7" class="col4">Під замовлення</td>
+  </tr>
+
+  <tr id="row5" align="center" charoff="0" valign="middle">
+    <td abbr="3" colspan="1" id="cell5_1" class="col1">3</td>
+    <td abbr="Ноутбук" colspan="1" id="cell5_2" class="col2">NovaBook Lite</td>
+    <td abbr="Процесор" colspan="1" id="cell5_3" class="col2">Intel N200</td>
+    <td abbr="ОЗУ" colspan="1" id="cell5_4" class="col2">8 ГБ</td>
+    <td abbr="ПЗУ" colspan="1" id="cell5_5" class="col2">256 ГБ eMMC</td>
+    <td abbr="Ціна3" colspan="1" id="cell5_6" class="col3">8 499</td>
+    <td abbr="Статус3" colspan="1" id="cell5_7" class="col4">Розпродано</td>
+  </tr>
+
+  <tr id="row6" align="center" charoff="0" valign="middle">
+    <td abbr="4" colspan="1" id="cell6_1" class="col1" rowspan="2">4</td>
+    <td abbr="ПК" colspan="1" id="cell6_2" class="col2">NovaStation Office</td>
+    <td abbr="Процесор" colspan="1" id="cell6_3" class="col2">Intel i3-14100</td>
+    <td abbr="ОЗУ" colspan="1" id="cell6_4" class="col2">8 ГБ</td>
+    <td abbr="ПЗУ" colspan="1" id="cell6_5" class="col2">512 ГБ SSD</td>
+    <td abbr="Ціна4" colspan="1" id="cell6_6" class="col3">14 999</td>
+    <td abbr="Статус4" colspan="1" id="cell6_7" class="col4" rowspan="2">Є в наявності</td>
+  </tr>
+
+  <tr id="row7" align="left" charoff="0" valign="middle">
+    <td abbr="Монітор" colspan="1" id="cell7_2" class="col2">Без монітора</td>
+    <td abbr="ОС" colspan="1" id="cell7_3" class="col2">Windows 11 Pro</td>
+    <td abbr="Гарантія" colspan="1" id="cell7_4" class="col2">36 міс</td>
+    <td abbr="Порти" colspan="1" id="cell7_5" class="col2">USB-C, HDMI, Wi-Fi 6</td>
+    <td abbr="—" colspan="1" id="cell7_6" class="col3">—</td>
+  </tr>
+
+  <tr id="row8" align="center" charoff="0" valign="middle">
+    <td abbr="5" colspan="1" id="cell8_1" class="col1">5</td>
+    <td abbr="Ноутбук" colspan="1" id="cell8_2" class="col2">NovaBook Pro</td>
+    <td abbr="Процесор" colspan="1" id="cell8_3" class="col2">AMD Ryzen 7 7840HS</td>
+    <td abbr="ОЗУ" colspan="1" id="cell8_4" class="col2">32 ГБ</td>
+    <td abbr="ПЗУ" colspan="1" id="cell8_5" class="col2">2 ТБ SSD</td>
+    <td abbr="Ціна5" colspan="1" id="cell8_6" class="col3">36 500</td>
+    <td abbr="Статус5" colspan="1" id="cell8_7" class="col4">Є в наявності</td>
+  </tr>
+
+  <tbody valign="top" style="display: none;" title="Допоміжний блок">
+  <tr><td></td></tr>
+  </tbody>
+</table>
+
+<colgroup>
+  <col align="center" char=".">
+  <col align="left" char=".">
+  <col align="left" char=".">
+  <col align="left" char=".">
+  <col align="left" char=".">
+  <col align="right" char=".">
+  <col align="center" char=".">
+</colgroup>
+
+</body>
+</html>
