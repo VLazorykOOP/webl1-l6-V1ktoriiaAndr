@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проста форма</title>
+  <style>
+    body { padding: 10px; font-family: sans-serif; /* Обов'язково */ }
+    fieldset { margin-bottom: 10px; background: #f9f9f9; }
+    div { margin-bottom: 5px; }
+    input, textarea, select, button { display: block; margin-top: 5px; }
+
+    h1 {
+      font-family: 'Lucida Sans'; /* Обов'язково */
+      text-shadow: #ccc 1px 1px 1px; /* Обов'язково */
+    }
+    .font-weights { font-weight: 300; /* Обов'язково */ font-weight: 400; /* Обов'язково */ }
+    .font-adjust { font-size-adjust: 0.5; /* Обов'язково */ font-size: 16px; /* Обов'язково */ }
+    .font-icon { font: icon; } /* Обов'язково */
+    .font-variant { font-variant: small-caps; font-style: normal; } /* Обов'язково */
+    .font-stretch {
+      font-stretch: semi-condensed; /* Обов'язково */
+      font-stretch: extra-condensed; /* Обов'язково */
+      font-stretch: ultra-condensed; /* Обов'язково */
+    }
+    @page {
+      size: portrait;
+      marks: cross;
+      page: auto;
+    }
+    @media print {
+      .no-break { page-break-inside: avoid; } /* Обов'язково */
+      body { widows: 2; orphans: 2; } /* Обов'язково */
+    }
+    @media speech {
+      .speech-props {
+        volume: x-soft;
+        volume: silent;
+        play-during: mix repeat;
+        cue-after: url('https://example.com/s.wav');
+        cue-before: url('https://example.com/s.wav');
+        cue: url('https://example.com/s1.wav') url('https://example.com/s2.wav');
+        azimuth: center-right;
+        azimuth: right-side;
+        elevation: lower;
+        speech-rate: medium;
+        speech-rate: faster;
+        voice-family: "MaleVA", male;
+        stress: 50;
+        richness: 50;
+        speak-numeral: continuous;
+        speak-punctuation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Продаж комп'ютерів</h1>
+
+<!-- Тег <form> з обов'язковими атрибутами -->
+<form action="" method="get" name="mainForm" dir="ltr" accept-charset="UTF-8" id="mainForm">
+  <fieldset>
+    <!-- Тег <legend> з обов'язковими атрибутами -->
+    <legend class="custom-class" title="Легенда" dir="auto">Обов'язкові поля</legend>
+
+    <!-- Тег <label> з обов'язковими атрибутами -->
+    <label for="tel" class="custom-label" form="mainForm" style="color: blue;">Телефон:</label>
+
+    <!-- Тег <input> (type='tel') та атрибути -->
+    <input type="tel" id="tel" name="tel" dir="auto" value="099-123-45-67">
+
+    <!-- Тег <input> (type='date') та атрибути -->
+    <label for="date">Дата:</label>
+    <input type="date" id="date" name="date" min="2020-01-01" max="2030-01-01">
+
+    <!-- Тег <input> (type='month') -->
+    <label for="month">Місяць:</label>
+    <input type="month" id="month" name="month">
+
+    <!-- Тег <input> (type='number') та атрибути -->
+    <label for="num">Номер (min 1, max 10):</label>
+    <input type="number" id="num" name="num" min="1" max="10">
+
+    <!-- Тег <input> (type='radio') та атрибути -->
+    <label>Радіо:</label>
+    <input type="radio" id="r1" name="r" value="1" checked>
+
+    <!-- Тег <input> (type='datetime-local') -->
+    <label for="dt">Дата/час:</label>
+    <input type="datetime-local" id="dt" name="dt">
+
+    <!-- Тег <input> (type='search') -->
+    <label for="s">Пошук:</label>
+    <input type="search" id="s" name="s">
+
+    <!-- Тег <input> (текст) з атрибутами -->
+    <label for="txt">Текст (minlength 3, maxlength 10):</label>
+    <input type="text" id="txt" name="txt" minlength="3" maxlength="10" autofocus>
+  </fieldset>
+
+  <fieldset>
+    <legend>Інші елементи</legend>
+
+    <!-- Тег <textarea> з обов'язковими атрибутами -->
+    <label for="area">Textarea:</label>
+    <textarea
+      id="area" name="area"
+      class="custom-textarea"
+      dir="auto"
+      maxlength="100"
+      style="border: 1px solid red;"
+      autofocus
+      readonly
+      disabled
+    >Відключено</textarea>
+
+    <!-- Тег <select> з <optgroup> (обов'язкові атрибути) -->
+    <select>
+      <optgroup label="Група 1" dir="ltr">
+        <option>1.1</option>
+      </optgroup>
+      <optgroup label="Група 2 (Відключено)" dir="auto" disabled>
+        <option>2.1</option>
+      </optgroup>
+    </select>
+
+    <!-- Тег <meter> з обов'язковими атрибутами -->
+    <label for="m">Meter (low 30):</label>
+    <meter id="m" min="0" max="100" low="30" value="25" style="width: 100%;" dir="ltr"></meter>
+
+    <!-- Тег <progress> з обов'язковими атрибутами -->
+    <label>Progress:</label>
+    <progress class="custom-progress" style="width: 100%;" value="50" max="100"></progress>
+
+    <!-- Тег <output> з обов'язковими атрибутами -->
+    <label>Output:</label>
+    <output id="out" for="num" lang="uk" title="Результат">5</output>
+  </fieldset>
+
+  <!-- Тег <details> з <summary> (обов'язкові атрибути) -->
+  <details>
+    <summary dir="auto" lang="uk" title="Деталі">Деталі</summary>
+    <p>Додаткова інформація.</p>
+  </details>
+
+  <!-- Тег <input type="image"> з обов'язковими атрибутами -->
+  <input type="image" src="https://placehold.co/100x40/ccc/333?text=IMG"
+         alt="Submit" formtarget="_blank" formmethod="post">
+
+  <!-- Тег <button> з обов'язковими атрибутами -->
+  <button type="submit" name="btn" formaction="s.php" formtarget="_blank" autofocus>
+    Відправити (Button)
+  </button>
+</form>
+
+</body>
+</html>
