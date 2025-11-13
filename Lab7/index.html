@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="Андрусик Вікторія Богданівна">
+  <meta name="Description" content="Сторінка автора для лабораторної роботи №1">
+  <title>Сторінка Автора</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="../js/lab_scripts.js" defer></script>
+
+  <style>
+    .event-demo-box {
+      padding: 20px;
+      margin: 10px;
+      border: 2px solid blue;
+      background-color: #f0f0f0;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .event-demo-box:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+
+<body onload="alert('Завдання 1 (onload): Сторінку (index.html) повністю завантажено!')">
+
+<header>
+  <h1 onclick="alert('Завдання 2 (onclick): Ви натиснули на H1.')">Сторінка автора веб-сайту</h1>
+
+  <nav>
+    <a href="index.html" title="Головна сторінка">Головна (ЛР3)</a> |
+    <a href="company.html" title="Інформація про компанію">Про компанію</a> |
+    <a href="news.html" title="Акції та новини">Новини</a> |
+    <a href="services.html" title="Наші послуги">Послуги</a> |
+    <a href="menu.html" title="Меню сайту">Меню</a> |
+    <a href="table.html" title="Лабораторна 4">Таблиці (ЛР4)</a> |
+    <a href="form.html" title="Лабораторна 5">Форми (ЛР5)</a> |
+    <a href="svg.html" title="Лабораторна 6">SVG (ЛР6)</a>
+  </nav>
+</header>
+
+<hr size="3" color="blue" width="50%">
+
+<main>
+  <h3 style="color: navy;" align="center"
+      ondblclick="alert('Завдання 2 (ondblclick): Ви двічі натиснули на ПІБ.')">
+    Андрусик Вікторія Богданівна
+  </h3>
+  <h4 id="student-group" title="Моя навчальна група" align="center">Студентка 241 групи</h4>
+
+  <p id="about-me" title="Коротка інформація" lang="uk">
+    Вітаю на моїй сторінці!
+  </p>
+
+  <h5 style="background-color: #f0f0f0;" dir="ltr" align="left"
+      onmouseover="changeElementStyle(this)"
+      onmouseout="resetElementStyle(this)">
+    Мої навички: (наведіть сюди курсор для зміни стилю)
+  </h5>
+  <ul>
+    <li><big id="html-skill" title="HyperText Markup Language" lang="en">Python</big></li>
+    <li>C++</li>
+    <li>Java</li>
+  </ul>
+
+  <fieldset class="lab-task-fieldset" style="border-color: #008080;">
+    <legend style="color: #008080;">Завдання 2: Демонстрація додаткових подій (F12)</legend>
+
+    <div class="event-demo-box"
+         onmousedown="task2_onMouseDown(this)"
+         onmouseup="task2_onMouseUp(this)">
+      <b>(onmousedown / onmouseup)</b><br>
+      Натисніть і відпустіть кнопку миші тут. Дивіться на зміну рамки та в консоль.
+    </div>
+
+    <div class="event-demo-box"
+         onmousemove="task2_onMouseMove(this)">
+      <b>(onmousemove)</b><br>
+      Поводіть мишею над цим блоком. Дивіться в консоль.
+    </div>
+
+    <div class="event-demo-box"
+         onwheel="task2_onWheel(this, event)">
+      <b>(onwheel / onmousewheel)</b><br>
+      Прокрутіть колесо миші над цим блоком. Блок змінить розмір.
+    </div>
+
+    <div class="event-demo-box"
+         draggable="true"
+         ondragstart="task2_onDragStart(this)"
+         ondragend="task2_onDragEnd(this)">
+      <b>(ondragstart / ondragend)</b><br>
+      Спробуйте "перетягнути" цей блок. Він стане прозорим.
+    </div>
+
+  </fieldset>
+
+  <fieldset class="lab-task-fieldset">
+    <legend>Завдання 3.1: Тип поточного браузера</legend>
+    <form onsubmit="return false;">
+      <button type="button" onclick="task3_1_showBrowserInfo()">Run Task</button>
+      <br>
+      <textarea id="task3_1_result" rows="4" cols="70" readonly placeholder="Інформація про браузер з'явиться тут..."></textarea>
+    </form>
+  </fieldset>
+
+  <fieldset class="lab-task-fieldset">
+    <legend>Завдання 5.1: Підрахунок слів</legend>
+    <form onsubmit="return false;">
+      <label for="task5_1_textInput">Введіть текст для аналізу:</label>
+      <input type="text" id="task5_1_textInput" placeholder="Введіть ваш текст тут...">
+      <button type="button" onclick="task5_1_countWords()">Пошук інформації (Підрахувати)</button>
+    </form>
+  </fieldset>
+
+  <fieldset class="lab-task-fieldset">
+    <legend>Завдання 6.1: Масив з додатних елементів</legend>
+    <form onsubmit="return false;">
+      <button type="button" onclick="task6_1_processArray()">Array Task</button>
+      <br>
+      <textarea id="task6_1_result" rows="5" cols="70" readonly placeholder="Результат обробки масиву з'явиться тут..."></textarea>
+    </form>
+  </fieldset>
+
+</main>
+
+<hr size="3" color="blue" width="50%">
+
+<footer>
+  <small class="copyright" lang="uk" dir="ltr">© 2025, Розробка Андрусик В.Б.</small>
+</footer>
+
+</body>
+</html>
