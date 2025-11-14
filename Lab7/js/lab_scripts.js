@@ -1,14 +1,4 @@
-/*
- * Скрипти для нової лабораторної роботи
- */
 
-/**
- * ЗАВДАННЯ 1 (для всіх): Обробники подій для <BODY> / <WINDOW>
- * Частина 1: onload (додано в HTML)
- * Частина 2: Інші обробники (додано тут)
- */
-
-// Події, які виводять повідомлення в консоль (F12)
 window.onresize = function() {
   console.log("Завдання 1 (onresize): Розмір вікна змінено.");
 };
@@ -22,11 +12,6 @@ window.onerror = function(message) {
   console.error('Завдання 1 (onerror): Сталася помилка JS -> ' + message);
 };
 
-/* * ============================================
- * НОВІ ДОДАНІ ПОДІЇ ДЛЯ ЗАВДАННЯ 1
- * (з файлу image_18d4ec.png та image_18d523.png)
- * ============================================
- */
 window.onscroll = function() {
   console.log("Завдання 1 (onscroll): Сторінку прокручено.");
 };
@@ -43,18 +28,10 @@ window.onhashchange = function() {
 };
 window.onbeforeunload = function(event) {
   console.log("Завдання 1 (onbeforeunload): Спроба закрити сторінку.");
-  // Деякі браузери вимагають 'returnValue' для показу стандартного попередження
   event.returnValue = "Ви впевнені, що хочете піти? Зміни можуть бути не збережені.";
   return event.returnValue;
 };
 
-
-/**
- * ЗАВДАННЯ 2 (для всіх): Обробники подій для елементів
- * (Основні події: onclick, ondblclick, onmouseover, onmouseout)
- */
-
-// Функція для зміни стилю (для onmouseover)
 function changeElementStyle(element) {
   console.log("Завдання 2 (onmouseover): Наведення курсору.");
   element.setAttribute('data-original-bg', element.style.backgroundColor);
@@ -65,19 +42,12 @@ function changeElementStyle(element) {
   element.style.transition = 'all 0.3s';
 }
 
-// Функція для повернення стилю (для onmouseout)
 function resetElementStyle(element) {
   console.log("Завдання 2 (onmouseout): Відведення курсору.");
   element.style.backgroundColor = element.getAttribute('data-original-bg');
   element.style.color = element.getAttribute('data-original-color');
   element.style.fontWeight = '';
 }
-
-/* * ============================================
- * НОВІ ДОДАНІ ПОДІЇ ДЛЯ ЗАВДАННЯ 2
- * (з файлу image_18d544.png)
- * ============================================
- */
 
 function task2_onMouseDown(element) {
   console.log("Завдання 2 (onmousedown): Кнопку миші НАТИСНУТО над елементом.");
@@ -90,12 +60,9 @@ function task2_onMouseUp(element) {
   element.style.borderWidth = '2px';
 }
 function task2_onMouseMove(element) {
-  // Ця подія спрацьовує ДУЖЕ ЧАСТО. Дивіться тільки в консолі.
   console.log("Завдання 2 (onmousemove): Курсор рухається над елементом.");
 }
 function task2_onWheel(element, event) {
-  // event.deltaY > 0 означає прокрутку вниз
-  // event.deltaY < 0 означає прокрутку вгору
   if (event.deltaY > 0) {
     console.log("Завдання 2 (onwheel): Колесо миші прокручено ВНИЗ.");
     element.style.transform = 'scale(0.9)';
@@ -103,7 +70,6 @@ function task2_onWheel(element, event) {
     console.log("Завдання 2 (onwheel): Колесо миші прокручено ВГОРУ.");
     element.style.transform = 'scale(1.1)';
   }
-  // Запобігаємо прокручуванню всієї сторінки, поки миша над цим елементом
   event.preventDefault();
 }
 function task2_onDragStart(element) {
