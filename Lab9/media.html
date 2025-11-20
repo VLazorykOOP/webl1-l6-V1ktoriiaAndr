@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медіа-бібліотека Digital Universe</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background-color: #333;
+      padding: 10px;
+      margin-bottom: 20px;
+      color: white;
+    }
+    nav a {
+      color: white;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    fieldset {
+      background: white;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    legend {
+      font-weight: bold;
+      color: #2c3e50;
+      padding: 0 10px;
+    }
+    select {
+      padding: 5px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    audio, .media-player {
+      display: block;
+      margin-top: 15px;
+      width: 100%;
+      max-width: 600px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Медіа-бібліотека</h1>
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="company.html">Про компанію</a>
+    <a href="media.html">Медіа (ЛР)</a>
+  </nav>
+</header>
+
+<main>
+  <fieldset>
+    <legend>Аудіотека</legend>
+    <form name="audioForm">
+      <label for="audioSelect">Оберіть трек:</label>
+      <select id="audioSelect" onchange="changeAudio()">
+        <option value="media/Queen-KillerQueen-Remastered2011.mp3">пісня 1</option>
+        <option value="media/remix.mp3">Мій ремікс</option>
+        <option value="https://www.ostmusic.org/sound/track/mafia_3/089%20The%20Rolling%20Stones%20-%20Paint%20It,%20Black.mp3">Зовнішній трек</option>
+      </select>
+    </form>
+
+    <audio id="audioPlayer" controls class="media-player" src="media/Queen-KillerQueen-Remastered2011.mp3">
+      Ваш браузер не підтримує тег audio.
+    </audio>
+  </fieldset>
+
+  <fieldset>
+    <legend>Відеотека</legend>
+    <form name="videoForm">
+      <label for="videoSelect">Оберіть відео:</label>
+      <select id="videoSelect" onchange="changeVideo()">
+        <option value="media/MadaravsShinobiAlliance_NarutoShippuden.mp4" data-type="local">Моє відео</option>
+        <option value="https://www.youtube.com/embed/wKqmEKkoDx0?si=DPSRVBAJUsnH6dAt" data-type="youtube">Відео 2 (YouTube)</option>
+      </select>
+    </form>
+
+    <div id="videoContainer">
+      <video id="localVideoPlayer" width="600" height="315" controls class="media-player" src="media/MadaravsShinobiAlliance_NarutoShippuden.mp4">
+        <track src="subtitles.vtt" kind="subtitles" srclang="uk" label="Українська">
+        Ваш браузер не підтримує тег video.
+      </video>
+
+      <iframe id="youtubePlayer" width="600" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="media-player hidden"></iframe>
+    </div>
+  </fieldset>
+</main>
+
+<script>
+  function changeAudio() {
+    const select = document.getElementById('audioSelect');
+    const player = document.getElementById('audioPlayer');
+    player.src = select.value;
+    player.load();
+    player.play();
+  }
+
+  function changeVideo() {
+    const select = document.getElementById('videoSelect');
+    const selectedOption = select.options[select.selectedIndex];
+    const videoType = selectedOption.getAttribute('data-type');
+    const videoUrl = select.value;
+
+    const localPlayer = document.getElementById('localVideoPlayer');
+    const youtubePlayer = document.getElementById('youtubePlayer');
+
+    if (videoType === 'youtube') {
+      localPlayer.classList.add('hidden');
+      localPlayer.pause();
+
+      youtubePlayer.src = videoUrl;
+      youtubePlayer.classList.remove('hidden');
+    } else {
+      youtubePlayer.classList.add('hidden');
+      youtubePlayer.src = "";
+
+      localPlayer.classList.remove('hidden');
+      localPlayer.src = videoUrl;
+      localPlayer.load();
+      localPlayer.play();
+    }
+  }
+</script>
+
+</body>
+</html>
